@@ -1,0 +1,53 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Valdis
+  Date: 2019/6/7
+  Time: 21:36
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<html>
+<head>
+    <title>编辑文章 | <s:property value="username" /></title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="index.jsp">首页</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">文章</a>
+        </li>
+        <li class="nav-item ml-md-auto">
+            <s:if test="#session.Username==null">
+                <a class="nav-link" href="login.jsp">登录</a>
+            </s:if>
+            <s:else>
+                <a class="nav-link" href="userHomepage.jsp"><s:property value="#session.Username" /></a>
+            </s:else>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="produce.action" method="post">
+                <div class="form-group">
+                    <input id="title" class="form-control" type="text" placeholder="文章标题">
+                </div>
+                <div class="form-group">
+                    <textarea rows="15" style="resize:none" id="content" class="form-control" placeholder="正文内容..." style="height: 50%"></textarea>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-danger" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

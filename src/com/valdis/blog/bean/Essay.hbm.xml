@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.valdis.blog.bean.Essay" table="essay" schema="j2eetest">
+        <id name="essayId">
+            <column name="essayID" sql-type="varchar(45)" length="45"/>
+        </id>
+        <property name="title">
+            <column name="title" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="time">
+            <column name="time" sql-type="datetime"/>
+        </property>
+        <property name="author">
+            <column name="author" sql-type="varchar(45)" length="45"/>
+        </property>
+    </class>
+</hibernate-mapping>
