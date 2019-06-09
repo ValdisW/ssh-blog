@@ -32,7 +32,16 @@
             <result name="success">/essays.jsp</result>
         </action>
 
+        <!-- 查看收藏列表 -->
+        <action name="stars" class="com.valdis.blog.action.UserAction" method="stars" >
+            <result name="success">/stars.jsp</result>
+        </action>
+
         <action name="star" class="com.valdis.blog.action.UserAction" method="starEssay" >
+            <result name="success">/essays.jsp</result>
+        </action>
+
+        <action name="unstar" class="com.valdis.blog.action.UserAction" method="unstarEssay" >
             <result name="success">/essays.jsp</result>
         </action>
     </package>

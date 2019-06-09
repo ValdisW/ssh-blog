@@ -11,6 +11,8 @@
         <mapping resource="com/valdis/blog/bean/User.hbm.xml"/>
         <mapping class="com.valdis.blog.bean.Essay"/>
         <mapping resource="com/valdis/blog/bean/Essay.hbm.xml"/>
+        <mapping class="com.valdis.blog.bean.Userstar"/>
+        <mapping resource="com/valdis/blog/bean/Userstar.hbm.xml"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

@@ -9,7 +9,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-  <title>Home</title>
+  <title>Home | <s:property value="#session.Username" default="未登录" /></title>
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="./style/myStyle.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -33,7 +33,7 @@
       </s:else>
     </li>
   </ul>
-
+Home
 </div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-    <title>个人主页 | <s:property value="username" /></title>
+    <title>个人主页 | <s:property value="#session.Username" default="未登录" /></title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="./style/myStyle.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -22,7 +22,7 @@
             <a class="nav-link active" href="index.jsp">首页</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">文章</a>
+            <s:a action="list" class="nav-link">文章</s:a>
         </li>
         <li class="nav-item ml-md-auto">
             <s:if test="#session.Username==null">
@@ -34,7 +34,7 @@
         </li>
     </ul>
     <a href="writing.jsp" class="btn btn-lg btn-danger">写文章</a>
-    <a href="#">收藏夹</a>
+    <s:a action="star">收藏夹</s:a>
 </div>
 </body>
 </html>

@@ -4,7 +4,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.valdis.blog.bean.Essay;
 import com.valdis.blog.bean.User;
 import com.valdis.blog.service.UserService;
-import javassist.bytecode.analysis.Type;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -12,9 +11,7 @@ import org.springframework.stereotype.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.sql.Array;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -38,6 +35,7 @@ public class UserAction extends ActionSupport {
 
     // - 标签专用 -
     private List<Essay> essayList;
+    private List<Essay> starList;
 
     // 登录
     public String login() {
@@ -77,6 +75,12 @@ public class UserAction extends ActionSupport {
         return SUCCESS;
     }
 
+    // 查看收藏列表
+    public String stars() {
+        starList = userService.getAllStars();
+        return SUCCESS;
+    }
+
     // 删除文章
     public String deleteEssay() {
         userService.deleteEssay(essayID);
@@ -87,6 +91,26 @@ public class UserAction extends ActionSupport {
     public String starEssay() {
         userService.starEssay(essayID);
         return SUCCESS;
+    }
+
+    // 取消收藏文章
+    public String unstarEssay() {
+        userService.unstarEssay(essayID);
+        return SUCCESS;
+    }
+
+    /*=====================
+     *  非Action
+    =======================*/
+    // 判断是否收藏文章
+    public boolean ifStar(String essayID) {
+        return userService.ifStar(essayID);
+    }
+
+    // 获取所有收藏文章的ID
+    public List getAllStars() {
+        System.out.println("23333");
+        return userService.getAllStars();
     }
 
     public List<Essay> getEssayList() {

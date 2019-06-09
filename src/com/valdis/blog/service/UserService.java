@@ -1,5 +1,6 @@
 package com.valdis.blog.service;
 
+import com.valdis.blog.bean.Essay;
 import com.valdis.blog.bean.User;
 
 import java.sql.Timestamp;
@@ -18,9 +19,18 @@ public interface UserService {
     // 获取所有文章
     List getEssays();
 
+    // 获取所有收藏的文章
+    List getAllStars();
+
     // 删除文章
     boolean deleteEssay(String essayID);
 
+    // 判断是否收藏
+    boolean ifStar(String essayID);
+
     // 收藏文章
     boolean starEssay(String essayID);
+
+    // 取消收藏文章
+    boolean unstarEssay(String essayID);
 }
