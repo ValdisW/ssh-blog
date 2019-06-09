@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User checkLogin(String username, String password) {
-
         User u = new User();
         u.setUsername(username);
         u.setPassword(password);
@@ -35,10 +34,10 @@ public class UserServiceImpl implements UserService {
             User newUser = new User();
             newUser.setUsername(username);
             newUser.setPassword(password);
+            newUser.setType("user");
             List users = baseDAO.find(newUser);
             if (users.size() == 0) {
-                baseDAO.add(newUser);
-                return true;
+                return baseDAO.add(newUser);
             }else {
                 return false;
             }
@@ -49,18 +48,33 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean produce(String id, String title, String content, Timestamp time, String author) {
-//        if (title.equals("") || content.equals("")) {
-//            return false;
-//        }else {
-//            Essay newEssay = new Essay();
-//            newEssay.setEssayId(id);
-//            newEssay.setTitle(title);
-//            newEssay.setContent(content);
-//            newEssay.setTime(time);
-//            newEssay.setAuthor(author);
-//            baseDAO.add(newEssay);
-//            return true;
-//        }
-        return true;
+        //System.out.println("ID: " + id + "\ntitle: " + title + "\nContent: " + content);
+        if (title.equals("") || content.equals("")) {
+            return false;
+        }else {
+            Essay newEssay = new Essay();
+            newEssay.setEssayId(id);
+            newEssay.setTitle(title);
+            newEssay.setContent(content);
+            newEssay.setTime(time);
+            newEssay.setAuthor(author);
+            return baseDAO.add(newEssay);
+        }
+    }
+
+    @Override
+    public List getEssays() {
+        return baseDAO.getAllEssays();
+    }
+
+    @Override
+    public boolean deleteEssay(String essayID) {
+        Essay essayResult = (Essay)baseDAO.findByHQL("from Essay where essayId=\'" + essayID + "\'").get(0);
+        return baseDAO.delete(essayResult);
+    }
+
+    @Override
+    public boolean starEssay(String essayID) {
+        return false;
     }
 }

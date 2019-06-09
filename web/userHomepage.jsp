@@ -11,6 +11,7 @@
 <head>
     <title>个人主页 | <s:property value="username" /></title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style/myStyle.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
@@ -33,6 +34,7 @@
         </li>
     </ul>
     <a href="writing.jsp" class="btn btn-lg btn-danger">写文章</a>
+    <a href="#">收藏夹</a>
 </div>
 </body>
 </html>

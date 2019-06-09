@@ -65,4 +65,14 @@ public class BaseDAOImpl implements BaseDAO {
     public List find(Object o) {
         return this.getHt().findByExample(o);
     }
+
+    @Override
+    public List getAllEssays() {
+        return this.getHt().find("from Essay");
+    }
+
+    @Override
+    public List findByHQL(String queryStr) {
+        return this.getHt().find(queryStr);
+    }
 }

@@ -11,4 +11,8 @@ public interface BaseDAO {
     boolean update(Object o);
 
     List find(Object o);
+
+    List findByHQL(String queryStr);
+
+    List getAllEssays();
 }

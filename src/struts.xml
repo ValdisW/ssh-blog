@@ -23,5 +23,17 @@
             <result name="success">/index.jsp</result>
             <result name="error">/writing.jsp</result>
         </action>
+
+        <action name="list" class="com.valdis.blog.action.UserAction" method="list">
+            <result name="success">/essays.jsp</result>
+        </action>
+
+        <action name="delete" class="com.valdis.blog.action.UserAction" method="deleteEssay" >
+            <result name="success">/essays.jsp</result>
+        </action>
+
+        <action name="star" class="com.valdis.blog.action.UserAction" method="starEssay" >
+            <result name="success">/essays.jsp</result>
+        </action>
     </package>
 </struts>

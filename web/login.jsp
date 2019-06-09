@@ -11,6 +11,7 @@
 <head>
     <title>登录</title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style/myStyle.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
@@ -21,7 +22,7 @@
             <a class="nav-link active" href="index.jsp">首页</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">文章</a>
+            <s:a action="list" class="nav-link" href="#">文章</s:a>
         </li>
         <li class="nav-item ml-md-auto">
             <s:if test="#session.Username==null">

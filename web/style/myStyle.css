@@ -1,0 +1,21 @@
+@font-face {
+    font-family: '思源黑体-Normal';
+    src: url("../font/SourceHanSansCN-Normal.otf");
+}
+@font-face {
+    font-family: '思源黑体-Medium';
+    src: url("../font/SourceHanSansCN-Medium.otf");
+}
+* { font-family: "思源黑体-Normal" }
+h1,h2,h3,h4,h5,h6 { font-family: "思源黑体-Medium" }
+a {
+    color: #000;
+}
+.btn-primary{
+    background-color: #111;
+    border: 1px solid #111;
+}
+.nav {
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+}

@@ -9,8 +9,9 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-    <title>编辑文章 | <s:property value="username" /></title>
+    <title>编辑文章 | <s:property value="#session.Username" /></title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style/myStyle.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
@@ -37,10 +38,10 @@
         <div class="col-md-6">
             <form action="produce.action" method="post">
                 <div class="form-group">
-                    <input id="title" class="form-control" type="text" placeholder="文章标题">
+                    <input id="title" name="title" class="form-control" type="text" placeholder="文章标题">
                 </div>
                 <div class="form-group">
-                    <textarea rows="15" style="resize:none" id="content" class="form-control" placeholder="正文内容..." style="height: 50%"></textarea>
+                    <textarea rows="15" style="resize:none" id="content" name="content" class="form-control" placeholder="正文内容..." style="height: 50%"></textarea>
                 </div>
                 <div class="form-group">
                     <input class="btn btn-danger" type="submit">
